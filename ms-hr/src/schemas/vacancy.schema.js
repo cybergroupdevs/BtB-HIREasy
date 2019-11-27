@@ -1,6 +1,8 @@
-const { Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+const autoIncrement = require('mongoose-sequence')(mongoose);
 
-exports.VacancySchema = new Schema({
+const VacancySchema = new Schema({
   jobTitle: {
     type: String,
     required: true,
@@ -41,5 +43,20 @@ exports.VacancySchema = new Schema({
   },
   creationUser: {
     type: String
-  }
+  },
+  // auto-increment field
+  vacancyID: { 
+    type: Number
+  },
+  isProcessed: {
+    type: Boolean,
+    default: false
+  },
 });
+
+VacancySchema.plugin(autoIncrement, {
+  inc_field: 'vacancyID',  
+  start_seq: 101
+});
+
+module.exports = { VacancySchema };
