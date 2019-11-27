@@ -1,9 +1,12 @@
 const { Schema } = require("mongoose");
 
-exports.EmailSchema = new Schema({
-  shortlistedCandidates:{
-      vacancyId: Number,
-      emailAddresses:[String]
-
-  }
-});
+exports.selectedCandidate = new Schema([{
+    vacancyId: Number,
+    candidate: [{
+        emailAddress: String,
+        fullName: String,
+        phone: String,
+        isSent: { type: Boolean, default: false },
+        _id: false
+    }]
+}]);

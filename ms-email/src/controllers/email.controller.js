@@ -9,46 +9,18 @@ class EmailController extends BaseController {
     super();
   }
 
-  async getVacancies(req, res) {
+  async getCandidates(req, res) {
     try {
-      const response = await email.getEmails();
-
+      const response = await email.getEmails(req.query.id);
       super.sendResponse({ req, res, response });
     } catch (err) {
       super.sendErrorResponse({ req, res, errResponse: err });
     }
   }
 
-  async createVacancy(req, res) {
+  async sendEmail(req, res) {
     try {
-      const response = await email.createVacancy({ body: req.body });
-
-      super.sendResponse({ req, res, response });
-    } catch (err) {
-      super.sendErrorResponse({ req, res, errResponse: err });
-    }
-  }
-
-  async updateVacancy(req, res) {
-    try {
-      const response = await email.updateVacancy({
-        id: req.body.id,
-        body: req.body
-      });
-
-      super.sendResponse({ req, res, response });
-    } catch (err) {
-      super.sendErrorResponse({ req, res, errResponse: err });
-    }
-  }
-
-  async deleteVacancy(req, res) {
-    try {
-      const response = await email.deleteVacancy({
-        id: req.body.id,
-        useSoftDelete: false
-      });
-
+      const response = await email.sendEmails({ body: req.body });
       super.sendResponse({ req, res, response });
     } catch (err) {
       super.sendErrorResponse({ req, res, errResponse: err });

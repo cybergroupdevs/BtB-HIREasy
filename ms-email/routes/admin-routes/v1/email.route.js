@@ -3,13 +3,9 @@ const { EmailController } = require("../../../src/controllers");
 module.exports = (fastify, option, done) => {
   const email = new EmailController();
 
-  fastify.get("/email", email.getVacancies);
+  fastify.get("/email", email.getCandidates);
 
-  fastify.post("/email", email.createVacancy);
-
-  fastify.patch("/email", email.updateVacancy);
-
-  fastify.delete("/email", email.deleteVacancy);
+  fastify.post("/email", email.sendEmail);
 
   done();
 };
