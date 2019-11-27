@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@the-medicsoft/webapi-framework": "^1.0.3"
+    "@the-medicsoft/webapi-framework": "^1.0.3",
+    "mongoose-sequence": "^5.2.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
