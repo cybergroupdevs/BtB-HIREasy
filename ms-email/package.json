@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@the-medicsoft/webapi-framework": "^1.0.3",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "mongoose-sequence": "^5.2.2"
   }
 }
