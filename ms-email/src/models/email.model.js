@@ -3,7 +3,8 @@ const { model } = require("mongoose");
 
 const { selectedCandidate } = require("../schemas");
 
-const consts = require('../helpers/constants.json');
+const consts = require('../helpers/constants.js');
+const emailHelper=require('../helpers/emailHelper.js');
 
 class EmailModel extends BaseModel {
   constructor() {
@@ -14,18 +15,28 @@ class EmailModel extends BaseModel {
     const emails = await super.readByQuery({ query: { vacancyId: Id } });
 
     if (emails.length) {
-      return super.success({
-        total: emails.length,
+      return {
+        isSuccess: true,
         data: emails,
         message: ""
-      });
+      };
     } else {
-      super.notFound({ message: "No Vacancies Found" });
+      return { 
+        isSuccess:false,
+        message: consts.NonFound_Message
+      };
     }
   }
 
-  async sendEmails({ body }) {
-    const response = await super.create({ body });
+  async sendEmails(Id) {
+    // const response = await super.create({ body });
+    const emails= await this.getEmails(Id);
+    if(emails.isSuccess){
+      emails.data["candidate"].forEach(candidate=>{
+        emailHelper.sendEmails(candidate.emailAddress)
+      })
+      
+    }
 
     if (response) {
       return super.success({
