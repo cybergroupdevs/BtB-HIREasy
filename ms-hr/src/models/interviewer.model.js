@@ -1,22 +1,64 @@
 const { BaseModel } = require("@the-medicsoft/webapi-framework");
 const { model } = require("mongoose");
+const { InterviewerSchema } = require("../schemas");
+var constants = require("../helpers/constants");
 
-const { VacancySchema } = require("../schemas");
-
-class VacancyModel extends BaseModel {
+class InterviewerModel extends BaseModel {
   constructor() {
-    super(model("Vacancy", VacancySchema));
+    super(model("Interviewer", InterviewerSchema));
   }
 
-  async getVacancies() {
-    const vacancies = await super.read();
+  async getInterviewers() {
+    const interviewers = await super.read();
 
-    if (vacancies) {
-      return super.success({ total: vacancies.length, data: vacancies, message: '' });
+    if (interviewers) {
+      return super.success({
+        total: interviewers.length,
+        data: interviewers,
+        message: ""
+      });
     } else {
       super.notFound();
     }
   }
+
+  async createInterviewer({ body }) {
+    console.log(body);
+    const response = await super.create({ body });
+
+    if (response) {
+      return super.success({
+        message: constants.Success_Message
+      });
+    } else {
+      super.fail({ message: constants.Error_Message });
+    }
+  }
+
+  async updateInterviewer({ id, body }) {
+    console.log(constants.stringConstants);
+    const response = await super.update({ id, body });
+
+    if (response) {
+      return super.success({
+        message: constants.Update_Message
+      });
+    } else {
+      super.notFound({ message: constants.NonFound_Message });
+    }
+  }
+
+  async deleteInterviewer({ id, useSoftDelete, deleteDoc }) {
+    const response = await super.delete({ id, useSoftDelete });
+
+    if (response) {
+      return super.success({
+        message: constants.Delete_Message
+      });
+    } else {
+      super.notFound({ message: constants.Error_Message });
+    }
+  }
 }
 
-module.exports = { VacancyModel };
+module.exports = { InterviewerModel };

@@ -1,7 +1,7 @@
 const { BaseModel } = require("@the-medicsoft/webapi-framework");
 const { model } = require("mongoose");
-
 const { VacancySchema } = require("../schemas");
+var constants = require("../helpers/constants");
 
 class VacancyModel extends BaseModel {
   constructor() {
@@ -18,7 +18,7 @@ class VacancyModel extends BaseModel {
         message: ""
       });
     } else {
-      super.notFound({ message: "No Vacancies Found" });
+      super.notFound({ message: constants.NonFound_Message });
     }
   }
 
@@ -27,10 +27,10 @@ class VacancyModel extends BaseModel {
 
     if (response) {
       return super.success({
-        message: "Vacancy Posted"
+        message: constants.Success_Message
       });
     } else {
-      super.fail({ message: "Error: Vacancy Not Posted" });
+      super.fail({ message: constants.Error_Message });
     }
   }
 
@@ -39,10 +39,10 @@ class VacancyModel extends BaseModel {
 
     if (response) {
       return super.success({
-        message: "Vacancy Updated"
+        message: constants.Update_Message
       });
     } else {
-      super.notFound({ message: "Vacancy Not Found" });
+      super.notFound({ message: constants.NonFound_Message });
     }
   }
 
@@ -51,10 +51,10 @@ class VacancyModel extends BaseModel {
 
     if (response) {
       return super.success({
-        message: "Vacancy Deleted"
+        message: constants.Delete_Message
       });
     } else {
-      super.notFound({ message: "Vacancy Not Deleted" });
+      super.notFound({ message: constants.Error_Message });
     }
   }
 }
