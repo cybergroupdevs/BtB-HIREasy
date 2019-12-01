@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-interviewer',
-  templateUrl: './interviewer.component.html',
-  styleUrls: ['./interviewer.component.css']
+  selector: "app-interviewer",
+  templateUrl: "./interviewer.component.html",
+  styleUrls: ["./interviewer.component.css"]
 })
 export class InterviewerComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
