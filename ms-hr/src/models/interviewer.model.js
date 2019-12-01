@@ -1,7 +1,7 @@
 const { BaseModel } = require("@the-medicsoft/webapi-framework");
 const { model } = require("mongoose");
-
 const { InterviewerSchema } = require("../schemas");
+var constants = require("../helpers/constants");
 
 class InterviewerModel extends BaseModel {
   constructor() {
@@ -28,22 +28,23 @@ class InterviewerModel extends BaseModel {
 
     if (response) {
       return super.success({
-        message: "Interviewer Added"
+        message: constants.Success_Message
       });
     } else {
-      super.fail({ message: "Error: Interviewer could not be added" });
+      super.fail({ message: constants.Error_Message });
     }
   }
 
   async updateInterviewer({ id, body }) {
+    console.log(constants.stringConstants);
     const response = await super.update({ id, body });
 
     if (response) {
       return super.success({
-        message: "Interviewer Updated"
+        message: constants.Update_Message
       });
     } else {
-      super.notFound({ message: "Interviewer Not Found" });
+      super.notFound({ message: constants.NonFound_Message });
     }
   }
 
@@ -52,10 +53,10 @@ class InterviewerModel extends BaseModel {
 
     if (response) {
       return super.success({
-        message: "Interviewer Deleted"
+        message: constants.Delete_Message
       });
     } else {
-      super.notFound({ message: "Interviewer Not Deleted" });
+      super.notFound({ message: constants.Error_Message });
     }
   }
 }
