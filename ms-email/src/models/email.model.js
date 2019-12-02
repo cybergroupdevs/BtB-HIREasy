@@ -4,7 +4,7 @@ const { model } = require("mongoose");
 const { selectedCandidate } = require("../schemas");
 
 const consts = require('../helpers/constants.js');
-const emailHelper=require('../helpers/emailHelper.js');
+const { EmailHelper } = require('../helpers/emailHelper.js');
 
 class EmailModel extends BaseModel {
   constructor() {
@@ -17,36 +17,46 @@ class EmailModel extends BaseModel {
     if (emails.length) {
       return {
         isSuccess: true,
-        data: emails,
+        data: emails[0],
         message: ""
       };
     } else {
-      return { 
-        isSuccess:false,
+      return {
+        isSuccess: false,
         message: consts.NonFound_Message
       };
     }
   }
 
-  async sendEmails(Id) {
-    // const response = await super.create({ body });
-    const emails= await this.getEmails(Id);
-    if(emails.isSuccess){
-      emails.data["candidate"].forEach(candidate=>{
-        emailHelper.sendEmails(candidate.emailAddress)
-      })
-      
-    }
+  async sendEmails(query) {
+    const emails = await super.readByQuery({ query });
+    const emailHelper = new EmailHelper();
 
-    if (response) {
+    if (emails.length) {
+      for (let candidate of emails[0].candidates) {
+        try {
+          await emailHelper.sendEmails(candidate.emailAddress);
+
+          // Set flag 'isSent' to true. To indicate email has been sent to the candidate.
+          await this.Model.updateOne({
+            vacancyId: query.vacancyId,
+            "candidates._id": candidate._id,
+            "candidates.emailAddress": candidate.emailAddress
+          }, {
+            "candidates.$.isSent": true
+          });
+        } catch (error) {
+          super.fail({ message: error.message });
+        }
+      }
+
       return super.success({
-        message: consts.email.success
+        message: consts.Mail_Success
       });
     } else {
-      super.fail({ message: "Error: Vacancy Not Posted" });
+      super.fail({ message: "Error: Email Not Sent" });
     }
   }
-
 }
 
 module.exports = { EmailModel };
