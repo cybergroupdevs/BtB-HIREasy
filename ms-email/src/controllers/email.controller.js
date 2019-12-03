@@ -20,7 +20,7 @@ class EmailController extends BaseController {
 
   async sendEmail(req, res) {
     try {
-      const response = await email.sendEmails(req.query.Id);
+      const response = await email.sendEmails(req.query);
       super.sendResponse({ req, res, response });
     } catch (err) {
       super.sendErrorResponse({ req, res, errResponse: err });

@@ -5,17 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "start:dev": "nodemon index.js"
+    "start:dev": "nodemon index.js",
+    "test": "cross-env NODE_ENV=testing mocha tests/**/*"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@the-medicsoft/webapi-framework": "^1.0.3"
+    "@the-medicsoft/webapi-framework": "^1.0.3",
+    "mongoose-sequence": "^5.2.2"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
+    "mocha": "^6.2.2",
     "nodemon": "^1.19.4"
   }
 }

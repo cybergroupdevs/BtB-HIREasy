@@ -1,36 +1,32 @@
-require('dotenv').config();
-const nodemailer=require('nodemailer');
-const consts=require('./constants');
+const { NODE_MAILER_CONFIG } = require('../../config/config');
+const nodemailer = require('nodemailer');
 
 class EmailHelper {
+  constructor() {
+    this.transporter = nodemailer.createTransport({
+      service: NODE_MAILER_CONFIG.EMAIL_SERVICE,
+      auth: {
+        user: NODE_MAILER_CONFIG.FROM_EMAIL_ADDRESS,
+        pass: NODE_MAILER_CONFIG.FROM_EMAIL_PASSWORD
+      }
+    });
 
-    constructor()
-    {
-       const transporter=nodemailer.createTransport({
-            service:'gmail',
-            auth:{
-                //ToDo
-                //Use .env File to fetch  email and password
-                user:consts.fromEmailAddress,
-                pass:'Test@1234'
-            }
-        });
-        
-        mailOptions={
-            from: consts.fromEmailAddress
-        };
-    }
-    async sendEmails(selectedCandidates){
-        mailOptions.to=selectedCandidates;
-        transporter.sendMail(mailOptions,function(err,data) {
-            if(err){
-                console.log(err);
-            } else { 
-                console.log('Mail Sent');
-            }
-        });
-    };    
+    this.mailOptions = {
+      from: NODE_MAILER_CONFIG.FROM_EMAIL_ADDRESS
+    };
+  }
+
+  async sendEmails(toSelectedCandidate) {
+    this.mailOptions.to = toSelectedCandidate;
+
+    await this.transporter.sendMail(this.mailOptions, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Mail Sent');
+      }
+    });
+  };
 }
 
-module.exports={EmailHelper};
-
+module.exports = { EmailHelper };
