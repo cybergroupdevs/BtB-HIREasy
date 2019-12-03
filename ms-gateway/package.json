@@ -1,0 +1,19 @@
+{
+  "name": "ms-api-gateway",
+  "version": "1.0.0",
+  "description": "This is a Gateway microservice for the entire application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "fast-gateway": "^1.4.0",
+    "fastify": "^2.10.0",
+    "helmet": "^3.21.2",
+    "k-fastify-gateway": "^2.8.0"
+  }
+}
