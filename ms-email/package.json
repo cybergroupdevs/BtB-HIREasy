@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@the-medicsoft/webapi-framework": "^1.0.1"
+    "@the-medicsoft/webapi-framework": "^1.0.3",
+    "dotenv": "^8.2.0",
+    "mongoose-sequence": "^5.2.2",
+    "nodemailer": "^6.3.1"
   }
 }
