@@ -14,6 +14,7 @@ import { ChartsModule } from "ng2-charts";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
 import { MatTableModule } from "@angular/material/table";
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -30,9 +31,10 @@ import { MatTableModule } from "@angular/material/table";
     MatToolbarModule,
     MatCardModule,
     MatTableModule,
-    ChartsModule
+    ChartsModule,
+    MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, VacancyComponent]
 })
 export class AppModule {}
