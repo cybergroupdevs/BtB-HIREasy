@@ -3,8 +3,9 @@
 import os
 import spacy
 from spacy.matcher import Matcher
+import json
 
-import utils as util
+import src.resume_parser.utils as util
 
 
 def resume_parser_wrapper(file_path):
@@ -24,20 +25,22 @@ def resume_parser_wrapper(file_path):
     parser_class.parse_skills(rs_content_nlp)
     parser_class.parse_education([sent.string.strip() for sent in rs_content_nlp])
     parser_class.parse_experience(rs_content)
+    return parser_class.insert_to_db()
 
-    return parser_class.convert_to_json()
 
-
-if __name__ == "__main__":
+def resume_main():
 
     resumes = []
     results = []
+    ret = []
     # get file
-    for root, directories, filenames in os.walk('..\\ftp'):
+    for root, directories, filenames in os.walk('src\\ftp'):
         for filename in filenames:
             file = os.path.join(root, filename)
-            ret = resume_parser_wrapper(file)
-            print(ret)
+            ret.append(resume_parser_wrapper(file))
+
+    return ret
+
 
 
 
