@@ -4,7 +4,8 @@
   "description": "This is a Gateway microservice for the entire application.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
