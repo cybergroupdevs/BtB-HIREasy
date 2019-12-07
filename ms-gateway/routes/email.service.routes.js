@@ -1,4 +1,4 @@
-const { 
+const {
   EMAIL_SERVICE_URL,
   EMAIL_SERVICE_BASE_API_PREFIX,
   EMAIL_SERVICE_BASE_ADMIN_PREFIX
@@ -6,11 +6,11 @@ const {
 
 module.exports = [
   {
-    prefix: `/email/${BASE_ADMIN_PREFIX}`,
+    prefix: `/email/${EMAIL_SERVICE_BASE_ADMIN_PREFIX}`,
     target: `${EMAIL_SERVICE_URL}/${EMAIL_SERVICE_BASE_ADMIN_PREFIX}`
   },
   {
-    prefix: "/email/api",
+    prefix: `/email/${EMAIL_SERVICE_BASE_API_PREFIX}`,
     target: `${EMAIL_SERVICE_URL}/${EMAIL_SERVICE_BASE_API_PREFIX}`
   }
 ];
