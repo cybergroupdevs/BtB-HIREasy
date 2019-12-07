@@ -13,7 +13,9 @@
     "fast-gateway": "^1.4.0",
     "fastify": "^2.10.0",
     "helmet": "^3.21.2",
-    "k-fastify-gateway": "^2.8.0"
+    "jsonwebtoken": "^8.5.1",
+    "k-fastify-gateway": "^2.8.0",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "cors": "^2.8.5",

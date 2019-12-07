@@ -12,6 +12,8 @@ fastify.register(require("k-fastify-gateway"), {
   routes: require("./routes")
 });
 
+require("./src/hooks/auth")(fastify);
+
 // start the gateway HTTP server
 fastify.listen(PORT).then(address => {
   console.log(`API Gateway listening on ${address}`);
