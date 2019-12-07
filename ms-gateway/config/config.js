@@ -11,8 +11,16 @@ class Config {
     this.PORT = process.env.PORT || 8080;
 
     this.microservice_config = {
-      EMAIL_SERVICE_URL: process.env.EMAIL_SERVICE_URL,
-      HR_SERVICE_URL: process.env.HR_SERVICE_URL
+      EMAIL_SERVICE: {
+        EMAIL_SERVICE_URL: process.env.EMAIL_SERVICE_URL,
+        EMAIL_SERVICE_BASE_API_PREFIX: process.env.EMAIL_SERVICE_BASE_API_PREFIX || 'api',
+        EMAIL_SERVICE_BASE_ADMIN_PREFIX: process.env.EMAIL_SERVICE_BASE_ADMIN_PREFIX || 'admin'
+      },
+      HR_SERVICE: {
+        HR_SERVICE_URL: process.env.HR_SERVICE_URL,
+        HR_SERVICE_BASE_API_PREFIX: process.env.HR_SERVICE_BASE_API_PREFIX || 'api',
+        HR_SERVICE_BASE_ADMIN_PREFIX: process.env.HR_SERVICE_BASE_ADMIN_PREFIX || 'admin'
+      }
     };
   }
 
