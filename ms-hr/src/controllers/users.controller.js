@@ -1,6 +1,9 @@
 const { BaseController } = require("@the-medicsoft/webapi-framework");
 const { UserModel } = require("../models");
 
+const { AUTH_SECRET_KEY, EXPIRES_IN } = require("../../config/config");
+const authHelper = require("rapidify-jwt/lib/utils/auth.helper");
+
 const user = new UserModel();
 
 class UserController extends BaseController {
@@ -28,9 +31,18 @@ class UserController extends BaseController {
 
   async createUser(req, res) {
     try {
-      const response = await user.createUser({ body: req.body });
+      let response = await user.createUser({ body: req.body });
+      response = JSON.parse(JSON.stringify(response));
 
       if (response) {
+        const token = authHelper.generateToken({
+          payload: { email: response.data.email },
+          secret: AUTH_SECRET_KEY,
+          expiresIn: EXPIRES_IN
+        });
+
+        response.data.token = token;
+
         super.sendResponse({ req, res, response });
       }
     } catch (error) {
