@@ -1,10 +1,10 @@
 const { NODE_MAILER_CONFIG } = require("../../config/config");
 const nodemailer = require("nodemailer");
-const fs = require('fs');
-const axios = require('axios');
+const fs = require("fs");
+const axios = require("axios");
 
-require.extensions['.html'] = function (module, filename) {
-    module.exports = fs.readFileSync(filename, 'utf8');
+require.extensions[".html"] = function(module, filename) {
+  module.exports = fs.readFileSync(filename, "utf8");
 };
 const interviewEmail = require("../templates/interviewEmail.html");
 
@@ -23,49 +23,55 @@ class EmailHelper {
     };
   }
 
-  async updateEmail(candidate,vacancyId){
+  async updateEmail(candidate, vacancyId) {
     var candidateEmail = interviewEmail;
 
-    let vacancyData = await axios.get("http://localhost:5000/admin/v1/vacancies");
-
-    // console.log(vacancyData.data);
-// console.log(vacancyData.data.data[1].vacancyID)
-       
-for(let vacancy of vacancyData.data.data){
-  if (vacancy.vacancyID == vacancyId) {
-         console.log(vacancy.vacancyID)
-         candidateEmail = candidateEmail.replace(/{insert job title here}/g,vacancy.jobTitle);
-         candidateEmail = candidateEmail.replace(/{insert job description here}/g,vacancy.jobDescription);
-         let date = new Date();
-         let interviewDate = date.getDate() + 1;
-         interviewDate += "-"+date.getMonth()+"-"+date.getFullYear();
-         candidateEmail = candidateEmail.replace(/{insert date here}/g,interviewDate);
-         candidateEmail = candidateEmail.replace(/{insert time here}/g,"10:00 AM");
-       }
-}
-    candidateEmail = candidateEmail.replace(/{insert name here}/g,candidate.fullName);
+    let vacancyData = await axios.get(
+      "http://localhost:5000/admin/v1/vacancies/" + vacancyId
+    );
+    var vacancy = vacancyData.data.data[0];
+    candidateEmail = candidateEmail.replace(
+      /{insert job title here}/g,
+      vacancy.jobTitle
+    );
+    candidateEmail = candidateEmail.replace(
+      /{insert job description here}/g,
+      vacancy.jobDescription
+    );
+    let date = new Date();
+    let interviewDate = date.getDate() + 1;
+    interviewDate += "-" + date.getMonth() + "-" + date.getFullYear();
+    candidateEmail = candidateEmail.replace(
+      /{insert date here}/g,
+      interviewDate
+    );
+    candidateEmail = candidateEmail.replace(/{insert time here}/g, "10:00 AM");
+    candidateEmail = candidateEmail.replace(
+      /{insert name here}/g,
+      candidate.fullName
+    );
 
     return candidateEmail;
   }
 
-  async sendEmails(toSelectedCandidate,vacancyId) {
+  async sendEmails(toSelectedCandidate, vacancyId) {
     this.mailOptions.to = toSelectedCandidate.emailAddress;
 
-    this.mailOptions.html = await this.updateEmail(toSelectedCandidate,vacancyId);
+    this.mailOptions.html = await this.updateEmail(
+      toSelectedCandidate,
+      vacancyId
+    );
 
     // this.mailOptions.html = interviewEmail;
     this.mailOptions.subject = "You have been shortlisted!";
-    
-    await this.transporter.sendMail(
-      this.mailOptions,
-      (err, data) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log("Mail Sent");
-        }
+
+    await this.transporter.sendMail(this.mailOptions, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Mail Sent");
       }
-    );
+    });
   }
 }
 
