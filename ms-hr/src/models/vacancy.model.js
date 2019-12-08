@@ -57,6 +57,20 @@ class VacancyModel extends BaseModel {
       super.notFound({ message: constants.Error_Message });
     }
   }
+
+  async getVacancyById({ id }) {
+    var query = { vacancyID: id };
+    const vacancy = await super.readByQuery({ query });
+
+    if (vacancy.length) {
+      return super.success({
+        data: vacancy,
+        message: ""
+      });
+    } else {
+      super.notFound({ message: constants.NonFound_Message });
+    }
+  }
 }
 
 module.exports = { VacancyModel };
