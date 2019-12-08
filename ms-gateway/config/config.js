@@ -3,7 +3,10 @@ class Config {
     this.NODE_ENV = process.env.NODE_ENV || "development";
     this.IS_NODE_ENV_LOWER = this.isNodeEnvLower();
 
-    if (this.IS_NODE_ENV_LOWER) {
+    // check if server runnig on HEROKU
+    this.HEROKU = process.env.HEROKU || false;
+
+    if (this.IS_NODE_ENV_LOWER && !this.HEROKU) {
       require("dotenv").config();
     }
 
@@ -12,7 +15,7 @@ class Config {
 
     // jwt auth settings
     this.AUTH_SECRET_KEY = process.env.AUTH_SECRET_KEY || "TEST@KEY";
-    this.EXPIRES_IN = process.env.EXPIRES_IN || "TEST@KEY";
+    this.EXPIRES_IN = process.env.EXPIRES_IN || "";
 
     this.microservice_config = {
       EMAIL_SERVICE: {

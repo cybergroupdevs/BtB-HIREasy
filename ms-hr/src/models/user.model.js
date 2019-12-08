@@ -34,7 +34,7 @@ class UserModel extends BaseModel {
   async createUser({ body }) {
     const response = await super.create({ body });
 
-    if (response) return super.success();
+    if (response) return super.success({ data: response });
     else super.fail();
   }
 

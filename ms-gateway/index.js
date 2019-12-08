@@ -1,6 +1,6 @@
 const fastify = require("fastify")({});
 
-const { PORT } = require("./config/config");
+const { PORT, AUTH_SECRET_KEY } = require("./config/config");
 
 // required plugin for HTTP requests proxy
 fastify.register(require("fastify-reply-from"));
@@ -12,7 +12,14 @@ fastify.register(require("k-fastify-gateway"), {
   routes: require("./routes")
 });
 
-require("./src/hooks/auth")(fastify);
+fastify.register(require("rapidify-jwt"), {
+  secret: AUTH_SECRET_KEY,
+  ignoreRoutes: [
+    {
+      url: "/hr/admin/v1/users"
+    }
+  ]
+});
 
 // start the gateway HTTP server
 fastify.listen(PORT).then(address => {
