@@ -23,7 +23,6 @@ class InterviewerModel extends BaseModel {
   }
 
   async createInterviewer({ body }) {
-    console.log(body);
     const response = await super.create({ body });
 
     if (response) {
@@ -36,7 +35,6 @@ class InterviewerModel extends BaseModel {
   }
 
   async updateInterviewer({ id, body }) {
-    console.log(constants.stringConstants);
     const response = await super.update({ id, body });
 
     if (response) {

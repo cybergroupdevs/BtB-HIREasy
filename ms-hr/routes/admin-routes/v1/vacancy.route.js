@@ -11,5 +11,7 @@ module.exports = (fastify, option, done) => {
 
   fastify.delete("/vacancies", vacancies.deleteVacancy);
 
+  fastify.get("/vacancies/:id", vacancies.getVacancyById);
+
   done();
 };
