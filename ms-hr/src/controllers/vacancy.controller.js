@@ -54,6 +54,18 @@ class VacancyController extends BaseController {
       super.sendErrorResponse({ req, res, errResponse: err });
     }
   }
+
+  async getVacancyById(req, res) {
+    try {
+      const response = await vacancy.getVacancyById({
+        id: req.params.id
+      });
+
+      super.sendResponse({ req, res, response });
+    } catch (err) {
+      super.sendErrorResponse({ req, res, errResponse: err });
+    }
+  }
 }
 
 module.exports = { VacancyController };
