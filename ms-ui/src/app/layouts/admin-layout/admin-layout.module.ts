@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table'
 
 import { AdminLayoutRoutes } from './admin-layout.routing';
@@ -17,6 +17,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VacancyComponent } from 'app/pages/vacancy/vacancy.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { InterviewComponent } from 'app/pages/interview/interview.component';
+import { AddVacancyComponent } from 'app/pages/modals/add-vacancy/add-vacancy.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -27,7 +31,10 @@ import { InterviewComponent } from 'app/pages/interview/interview.component';
     NgbModule,
     MatTableModule,
     MatPaginatorModule,
-    
+    MatDialogModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   declarations: [
     DashboardComponent,
@@ -37,7 +44,9 @@ import { InterviewComponent } from 'app/pages/interview/interview.component';
     TypographyComponent,
     IconsComponent,
     NotificationsComponent,
-    VacancyComponent,InterviewComponent
+    VacancyComponent,
+    InterviewComponent,
+    AddVacancyComponent
   ]
 })
 

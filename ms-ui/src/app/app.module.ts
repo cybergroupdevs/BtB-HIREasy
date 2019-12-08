@@ -9,6 +9,12 @@ import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -25,7 +31,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     NavbarModule,
     ToastrModule.forRoot(),
     FooterModule,
-    FixedPluginModule
+    FixedPluginModule,FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,MatSelectModule,MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
