@@ -1,12 +1,13 @@
 import pandas as pd
 import os
 import io
-import constants as cs
+import src.resume_parser.constants as cs
 import re
 import docx2txt
 import nltk
 import json
 import textwrap
+import src.db.mongo_adapter as mdb
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from pdfminer.converter import TextConverter
@@ -52,8 +53,10 @@ class Utility:
                 fake_file_handle.close()
 
     # Function to insert parsed resume to mongodb
-    def insert_to_db(self, json_string):
-        pass
+    def insert_to_db(self):
+        mongodb = mdb.MongoAdapter()
+        insert_id = mongodb.insert_document(self.__name, self.__email, self.__contact, self.__skills, self.__edu, self.__exp)
+        return insert_id
 
     # PARSING FUNCTIONS
     def parse_skills(self, nlp_string):
