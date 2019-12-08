@@ -21,6 +21,7 @@ import { AddVacancyComponent } from 'app/pages/modals/add-vacancy/add-vacancy.co
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { AddInterviewerComponent } from 'app/pages/modals/add-interviewer/add-interviewer.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {MatSelectModule} from '@angular/material/select';
     NotificationsComponent,
     VacancyComponent,
     InterviewComponent,
-    AddVacancyComponent
+    AddVacancyComponent,
+    AddInterviewerComponent
   ]
 })
 
