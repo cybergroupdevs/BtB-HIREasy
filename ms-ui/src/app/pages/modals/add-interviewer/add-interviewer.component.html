@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card card-stats">
+            <div class="card-body">
+               <form id="addInterViewer">
+                 <div class="row ">
+                  <div class="col ">
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input class="form-control" >
+                    </div>
+                    
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="Email">Email</label>
+                      <input class="form-control" type="email" >
+                  </div>
+                    
+                  </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                      <div class="form-group">
+                        <label for="designation" >Select Designation</label>
+                        <select class="form-control">
+                          <option *ngFor="let designation of designations">
+                            {{designation}}
+                          </option>
+                        </select>
+                      </div>
+                   </div>
+                    
+                    <div class="col">
+                        <div class="form-group">
+                          <label for="department" >Department</label>
+                          <select class="form-control">
+                            <option *ngFor="let department of departments">
+                              {{department}}
+                            </option>
+                          </select>
+                        </div>
+                    </div>
+                   </div>
+                   <div class="row">
+                     <div class="col">
+                        <div class="form-group">
+                            <label for="skills" >Skills</label>
+                            <select  class="form-control">
+                              <option *ngFor="let skill of skills">
+                                {{skill}}
+                              </option>
+                            </select>
+                          </div>
+                     </div>
+                     <div class="col">
+                      <div class="form-group">
+                        <label for="Experienece">Experience in Years</label>
+                        <input type="number" maxlength="2" class="form-control">
+                      </div>
+                     </div>
+                   </div>
+                   
+                   <div class="row">
+                     <div class="col">
+  
+                     </div>
+                     <div class="col">
+                       <button type="submit" class="btn btn-primary" style="float: right;" (click)="addInterViewer()" >Add Interviewer</button>
+                     </div>
+                   </div>
+                 
+               </form>
+            </div>
+        </div>
+    </div>
+  </div>
+    
