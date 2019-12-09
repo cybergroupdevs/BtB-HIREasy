@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@the-medicsoft/webapi-framework": "^1.0.3",
-    "mongoose-sequence": "^5.2.2"
+    "mongoose-sequence": "^5.2.2",
+    "rapidify-jwt": "git+https://github.com/rapidify/rapidify-jwt.git#development"
   },
   "devDependencies": {
     "chai": "^4.2.0",

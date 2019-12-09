@@ -4,16 +4,20 @@
   "description": "This is a Gateway microservice for the entire application.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
     "fast-gateway": "^1.4.0",
     "fastify": "^2.10.0",
     "helmet": "^3.21.2",
-    "k-fastify-gateway": "^2.8.0"
+    "k-fastify-gateway": "^2.8.0",
+    "rapidify-jwt": "git+https://github.com/rapidify/rapidify-jwt.git#development"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0"
   }
 }

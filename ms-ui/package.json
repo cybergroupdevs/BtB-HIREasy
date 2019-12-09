@@ -11,6 +11,10 @@
     "e2e": "ng e2e",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
   },
+  "styles": [
+    "styles/bootstrap-3.3.7-dist/css/bootstrap.min.css",
+    "styles.scss"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "8.0.2",
