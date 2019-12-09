@@ -1,40 +1,43 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { HttpClientModule } from "@angular/common/http";
-
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { VacancyComponent } from "./vacancy/vacancy.component";
-import { InterviewerComponent } from "./interviewer/interviewer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ToastrModule } from "ngx-toastr";
+import { SidebarModule } from './sidebar/sidebar.module';
+import { FooterModule } from './shared/footer/footer.module';
+import { NavbarModule } from './shared/navbar/navbar.module';
+import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
+import { AppComponent } from './app.component';
+import { AppRoutes } from './app.routing';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
-import { ChartsModule } from "ng2-charts";
 
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatCardModule } from "@angular/material/card";
-import { MatTableModule } from "@angular/material/table";
-import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    VacancyComponent,
-    InterviewerComponent
+    AdminLayoutComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatTableModule,
-    ChartsModule,
-    MatInputModule
+    RouterModule.forRoot(AppRoutes, {
+      useHash: true
+    }),
+    SidebarModule,
+    NavbarModule,
+    ToastrModule.forRoot(),
+    FooterModule,
+    FixedPluginModule, FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule, MatSelectModule, MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent, VacancyComponent]
 })
-export class AppModule {}
+export class AppModule { }
