@@ -1,6 +1,6 @@
 import src.resume_parser.parser as parser
 from bottle import route, run
-import src.db.mongo_adapter as db
+import src.api.mongo_adapter as db
 from bson.json_util import dumps
 
 
