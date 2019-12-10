@@ -6,4 +6,5 @@ module.exports = fastify => {
   fastify.register(require("./vacancy.route"), registerOptions);
   fastify.register(require("./interviewer.route"), registerOptions);
   fastify.register(require("./user.route"), registerOptions);
+  fastify.register(require("./candidate.route"), registerOptions);
 };
