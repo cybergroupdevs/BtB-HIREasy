@@ -1,9 +1,5 @@
-import os
+# MONGO DB SETTINGS
 
-
-class Config(object):
-    MONGO_HOST = os.getenv('MONGO_HOST')
-    MONGO_USER = os.getenv('MONGO_USER')
-    MONGO_PASS = os.getenv('MONGO_PASS')
-    MONGO_DB = os.getenv('MONGO_DB')
-    MONGO_DATA_SCRAPE_COLLECTION = 'candidates'
+MONGO_HOST = "mongodb+srv://vac_user1:admin_password@btb-test-cluster-ukene.mongodb.net/test?retryWrites=true&w=majority"
+MONGO_COLLECTION = "candidate_list"
+MONGO_DATABASE = "hrdb"

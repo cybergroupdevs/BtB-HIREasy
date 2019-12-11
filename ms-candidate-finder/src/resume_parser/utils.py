@@ -7,7 +7,7 @@ import docx2txt
 import nltk
 import json
 import textwrap
-import src.db.mongo_adapter as mdb
+import src.api.mongo_adapter as mdb
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from pdfminer.converter import TextConverter
@@ -142,7 +142,7 @@ class Utility:
         sent = nltk.pos_tag(filtered_sentence)
 
         # parse regex
-        cp = nltk.RegexpParser('P: {<NNP>+}')
+        cp = nltk.RegexpParser('P: {<NNP>+<CD>}')
         cs = cp.parse(sent)
 
         # for i in cs.subtrees(filter=lambda x: x.label() == 'P'):
@@ -199,4 +199,6 @@ class Utility:
         sentences = [nltk.pos_tag(sent) for sent in sentences]
         return sentences
 
+    def move_to_archive(self, filename):
+        os.rename(filename, "src//ftp_archive//"+os.path.basename(filename))
 

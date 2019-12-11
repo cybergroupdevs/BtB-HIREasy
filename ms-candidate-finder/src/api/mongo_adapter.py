@@ -1,14 +1,17 @@
 import pymongo
+import src.config as config
 
 
 class MongoAdapter:
     def __init__(self):
-        host = 'mongodb+srv://vac_user1:admin_password@btb-test-cluster-ukene.mongodb.net/test?retryWrites=true&w=majority'
+        host = config.MONGO_HOST
         self.client = pymongo.MongoClient(host)
+        self.database = self.client[config.MONGO_DATABASE]
+        self.collection = self.database[config.MONGO_COLLECTION]
 
     def get_all_data(self):
-        ma = MongoAdapter()
-        vl = ma.client.hrdb.candidate_list.find()
+        adapter = MongoAdapter()
+        vl = adapter.collection.find()
         return vl
 
     def insert_document(self, name, email, contact, skills, edu, exp):
@@ -21,7 +24,7 @@ class MongoAdapter:
             "education": edu,
             "experience": exp
         }
-        post_id = adapter.client.hrdb.candidate_list.insert_one(post).inserted_id
+        post_id = adapter.collection.insert_one(post).inserted_id
         return str(post_id)
 
 
