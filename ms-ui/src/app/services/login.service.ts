@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
 
 export class LoginService {
     constructor(private http: HttpClient){}
-    apiUrl="http://localhost:9000/";
+    apiUrl="http://localhost:10000/";
     addInterviewer(obj){
         return this.http.post(this.apiUrl+"admin/v1/interviewers",obj);
     };
