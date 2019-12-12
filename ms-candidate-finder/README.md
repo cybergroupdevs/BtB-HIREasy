@@ -1,5 +1,8 @@
-# Server to find available candidates and store their information in JSON format, also save the resume if available
+# MS-candidate-finder
+Microservice to parse the resume of the candidates.
 
-Run 
-<li>pip install -r requirements.txt</li>
-<li>python pre_requisites.py</li>
+## How to install
+- Clone the repo
+- Run ```pip install -r``` to install the dependencies.
+- Run ```python pre_requisites.py``` to launch the microservice.
+- Go to http://localhost:8000/ 
