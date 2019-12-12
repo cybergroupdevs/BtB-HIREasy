@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
 
 export class VacancyService {
     constructor(private http: HttpClient){}
-    apiUrl="http://localhost:9000/";
+    apiUrl="http://localhost:10000/";
     createVacancy(obj){
         return this.http.post(this.apiUrl+"admin/v1/vacancies",obj);
     };

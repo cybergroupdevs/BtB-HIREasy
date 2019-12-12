@@ -1,110 +1,110 @@
 <div class="row">
   <div class="col-lg-3">
-      <div routerLink="/vacancy">
-          <div class="card card-stats test">
-            <div class="card-body ">
-              <div class="row">
-                <div class="col-5 col-md-4">
-                  <div class="icon-big text-center icon-warning">
-                    <i class="nc-icon nc-globe text-warning"></i>
-                  </div>
-                </div>
-                <div class="col-7 col-md-8">
-                  <div class="numbers">
-                    <p class="card-category">Vacancies</p>
-                    <p class="card-title">15
-                      <p>
-                  </div>
-                </div>
+    <div routerLink="/vacancy">
+      <div class="card card-stats test">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-globe text-warning"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Vacancies</p>
+                <p class="card-title">{{vacanciesCount}}
+                  <p>
               </div>
             </div>
           </div>
         </div>
-        <div>
-          <div class="card card-stats">
-            <div class="card-body ">
-              <div class="row">
-                <div class="col-5 col-md-4">
-                  <div class="icon-big text-center icon-warning">
-                    <i class="nc-icon nc-money-coins text-success"></i>
-                  </div>
-                </div>
-                <div class="col-7 col-md-8">
-                  <div class="numbers">
-                    <p class="card-category">Shortlisted Candidates</p>
-                    <p class="card-title">13
-                      <p>
-                  </div>
-                </div>
+      </div>
+    </div>
+    <div>
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-money-coins text-success"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Shortlisted Candidates</p>
+                <p class="card-title">{{shortlistedCandidatesCount}}
+                  <p>
               </div>
             </div>
           </div>
         </div>
-        
+      </div>
+    </div>
+
   </div>
   <div class="col-lg-3">
-      <div>
-          <div class="card card-stats">
-            <div class="card-body ">
-              <div class="row">
-                <div class="col-5 col-md-4">
-                  <div class="icon-big text-center icon-warning">
-                    <i class="nc-icon nc-vector text-danger"></i>
-                  </div>
-                </div>
-                <div class="col-7 col-md-8">
-                  <div class="numbers">
-                    <p class="card-category">Interview's Scheduled</p>
-                    <p class="card-title">23
-                      <p>
-                  </div>
-                </div>
+    <div>
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-vector text-danger"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Interview's Scheduled</p>
+                <p class="card-title">{{interviewsScheduledCount}}
+                  <p>
               </div>
             </div>
           </div>
         </div>
-        <div >
-          <div class="card card-stats">
-            <div class="card-body ">
-              <div class="row">
-                <div class="col-5 col-md-4">
-                  <div class="icon-big text-center icon-warning">
-                    <i class="nc-icon nc-favourite-28 text-primary"></i>
-                  </div>
-                </div>
-                <div class="col-7 col-md-8">
-                  <div class="numbers">
-                    <p class="card-category">Resume Parsed</p>
-                    <p class="card-title">101
-                      <p>
-                  </div>
-                </div>
+      </div>
+    </div>
+    <div>
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-favourite-28 text-primary"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers" role="button" (click)="startResumeParsing();">
+                <p class="card-category">Resume Parsed</p>
+                <p class="card-title">{{resumeParsedCount}}
+                  <p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </div>
   <div class="col-lg-6">
-      <div>
-          <div class="card ">
-            <div class="card-header ">
-              <h5 class="card-title">Top Required Skills</h5>
-              <p class="card-category">Last Campaign Performance</p>
-            </div>
-            <div class="card-body ">
-              <canvas id="chartEmail"></canvas>
-            </div>
-            <div class="card-footer ">
-              <div class="legend">
-                <i class="fa fa-circle text-primary"></i> Opened
-                <i class="fa fa-circle text-warning"></i> Read
-                <i class="fa fa-circle text-danger"></i> Deleted
-                <i class="fa fa-circle text-gray"></i> Unopened
-              </div>
-              
-            </div>
-          </div>
+    <div>
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title">Top Required Skills</h5>
+          <p class="card-category">Last Campaign Performance</p>
         </div>
+        <div class="card-body ">
+          <canvas id="chartEmail"></canvas>
+        </div>
+        <div class="card-footer ">
+          <div class="legend">
+            <i class="fa fa-circle text-primary"></i> Opened
+            <i class="fa fa-circle text-warning"></i> Read
+            <i class="fa fa-circle text-danger"></i> Deleted
+            <i class="fa fa-circle text-gray"></i> Unopened
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

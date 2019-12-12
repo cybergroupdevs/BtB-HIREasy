@@ -31,6 +31,9 @@ class Config {
           process.env.HR_SERVICE_BASE_API_PREFIX || "api",
         HR_SERVICE_BASE_ADMIN_PREFIX:
           process.env.HR_SERVICE_BASE_ADMIN_PREFIX || "admin"
+      },
+      RESUME_PARSER: {
+        RESUME_PARSER_URL: process.env.RESUME_PARSER_URL
       }
     };
   }
