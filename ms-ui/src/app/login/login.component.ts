@@ -14,6 +14,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    var form=document.getElementById("LoginForm");
+    if(form[0]=="" || form[1]=="")
+    {
+      
+    }
+    debugger;
     this.router.navigate(['/dashboard']);
   }
 }

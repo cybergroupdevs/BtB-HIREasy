@@ -42,7 +42,7 @@ export class VacancyComponent implements OnInit {
 
   async vacany() {
     await this.VacancyService.vacancy().subscribe((data: any[]) => {
-      this.vacancyData = data.data;
+      this.vacancyData = data;
       console.log(this.vacancyData);
       this.addChartdata();
     });
