@@ -1,1 +1,3 @@
-# Python app for shortlisting eligible candidates and dumping all the information to mongoDB
+## MS-JD-mapper
+Will be featuring parsing of Job Description entered while creating vacancies.
+To be implemented in future. 
