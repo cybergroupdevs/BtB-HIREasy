@@ -9,7 +9,7 @@ module.exports = (fastify, option, done) => {
 
   fastify.patch("/vacancies", vacancies.updateVacancy);
 
-  fastify.delete("/vacancies", vacancies.deleteVacancy);
+  fastify.delete("/vacancies", vacancies.deleteVacancy);  
 
   done();
 };
