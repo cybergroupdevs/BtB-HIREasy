@@ -4,6 +4,8 @@ module.exports = (fastify, option, done) => {
   const users = new UserController();
 
   fastify.get("/users", users.getUsers);
+  
+  fastify.post("/login",users.login);
 
   fastify.post("/users", users.createUser);
 
