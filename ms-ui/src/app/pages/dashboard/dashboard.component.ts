@@ -1,124 +1,163 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { DashboardService } from "../../services/dashboard.service";
+import { ResumeParserService } from "../../services/resumeParser.service";
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
-    selector: 'dashboard-cmp',
-    moduleId: module.id,
-    templateUrl: 'dashboard.component.html',
-    styleUrls: ["dashboard.component.css"]
+  selector: 'dashboard-cmp',
+  moduleId: module.id,
+  templateUrl: 'dashboard.component.html',
+  styleUrls: ["dashboard.component.css"]
 })
 
-export class DashboardComponent implements OnInit{
+export class DashboardComponent implements OnInit {
 
-  public canvas : any;
+  public canvas: any;
   public ctx;
   public chartColor;
   public chartEmail;
   public chartHours;
+  public vacanciesCount;
+  public interviewsScheduledCount;
+  public shortlistedCandidatesCount;
+  public resumeParsedCount;
 
-    ngOnInit(){
-      this.chartColor = "#FFFFFF";
-      this.canvas = document.getElementById("chartEmail");
-      this.ctx = this.canvas.getContext("2d");
-      this.chartEmail = new Chart(this.ctx, {
-        type: 'pie',
-        data: {
-          labels: [1, 2, 3],
-          datasets: [{
-            label: "Emails",
-            pointRadius: 0,
-            pointHoverRadius: 0,
-            backgroundColor: [
-              '#e3e3e3',
-              '#4acccd',
-              '#fcc468',
-              '#ef8157'
-            ],
-            borderWidth: 0,
-            data: [342, 480, 530, 120]
-          }]
+  constructor(private dashboardService: DashboardService, private toastr: ToastrService, private resumeParserService: ResumeParserService) { }
+
+  ngOnInit() {
+    this.chartColor = "#FFFFFF";
+    this.canvas = document.getElementById("chartEmail");
+    this.ctx = this.canvas.getContext("2d");
+    this.chartEmail = new Chart(this.ctx, {
+      type: 'pie',
+      data: {
+        labels: [1, 2, 3],
+        datasets: [{
+          label: "Emails",
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          backgroundColor: [
+            '#e3e3e3',
+            '#4acccd',
+            '#fcc468',
+            '#ef8157'
+          ],
+          borderWidth: 0,
+          data: [342, 480, 530, 120]
+        }]
+      },
+
+      options: {
+
+        legend: {
+          display: false
         },
 
-        options: {
+        pieceLabel: {
+          render: 'percentage',
+          fontColor: ['white'],
+          precision: 2
+        },
 
-          legend: {
-            display: false
-          },
+        tooltips: {
+          enabled: false
+        },
 
-          pieceLabel: {
-            render: 'percentage',
-            fontColor: ['white'],
-            precision: 2
-          },
+        scales: {
+          yAxes: [{
 
-          tooltips: {
-            enabled: false
-          },
+            ticks: {
+              display: false
+            },
+            gridLines: {
+              drawBorder: false,
+              zeroLineColor: "transparent",
+              color: 'rgba(255,255,255,0.05)'
+            }
 
-          scales: {
-            yAxes: [{
+          }],
 
-              ticks: {
-                display: false
-              },
-              gridLines: {
-                drawBorder: false,
-                zeroLineColor: "transparent",
-                color: 'rgba(255,255,255,0.05)'
-              }
+          xAxes: [{
+            barPercentage: 1.6,
+            gridLines: {
+              drawBorder: false,
+              color: 'rgba(255,255,255,0.1)',
+              zeroLineColor: "transparent"
+            },
+            ticks: {
+              display: false,
+            }
+          }]
+        },
+      }
+    });
 
-            }],
+    var speedCanvas = document.getElementById("speedChart");
 
-            xAxes: [{
-              barPercentage: 1.6,
-              gridLines: {
-                drawBorder: false,
-                color: 'rgba(255,255,255,0.1)',
-                zeroLineColor: "transparent"
-              },
-              ticks: {
-                display: false,
-              }
-            }]
-          },
-        }
-      });
+    var dataFirst = {
+      data: [0, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],
+      fill: false,
+      borderColor: '#fbc658',
+      backgroundColor: 'transparent',
+      pointBorderColor: '#fbc658',
+      pointRadius: 4,
+      pointHoverRadius: 4,
+      pointBorderWidth: 8,
+    };
 
-      var speedCanvas = document.getElementById("speedChart");
+    var dataSecond = {
+      data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
+      fill: false,
+      borderColor: '#51CACF',
+      backgroundColor: 'transparent',
+      pointBorderColor: '#51CACF',
+      pointRadius: 4,
+      pointHoverRadius: 4,
+      pointBorderWidth: 8
+    };
 
-      var dataFirst = {
-        data: [0, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],
-        fill: false,
-        borderColor: '#fbc658',
-        backgroundColor: 'transparent',
-        pointBorderColor: '#fbc658',
-        pointRadius: 4,
-        pointHoverRadius: 4,
-        pointBorderWidth: 8,
-      };
+    var speedData = {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      datasets: [dataFirst, dataSecond]
+    };
 
-      var dataSecond = {
-        data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
-        fill: false,
-        borderColor: '#51CACF',
-        backgroundColor: 'transparent',
-        pointBorderColor: '#51CACF',
-        pointRadius: 4,
-        pointHoverRadius: 4,
-        pointBorderWidth: 8
-      };
+    var chartOptions = {
+      legend: {
+        display: false,
+        position: 'top'
+      }
+    };
 
-      var speedData = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [dataFirst, dataSecond]
-      };
+    this.dashboradData();
+  }
 
-      var chartOptions = {
-        legend: {
-          display: false,
-          position: 'top'
-        }
-      };
-    }
+  dashboradData() {
+    this.dashboardService.getDashboardData().subscribe(resData => {
+      const data = resData['data'];
+
+      this.vacanciesCount = data["vacanciesCount"];
+      this.interviewsScheduledCount = data["interviewsScheduledCount"];
+      this.shortlistedCandidatesCount = data["shortlistedCandidatesCount"];
+      this.resumeParsedCount = data["resumeParsedCount"];
+    });
+  }
+
+  startResumeParsing() {
+    // window.confirm('Resume Parsing Started');
+    this.toastr.info(
+      '<span data-notify="message"><b>Resume Parsing Started!</b></span>',
+      "",
+      {
+        timeOut: 4000,
+        closeButton: true,
+        enableHtml: true,
+        toastClass: "alert alert-warning alert-with-icon",
+        positionClass: "toast-" + "top" + "-" + "center"
+      }
+    );
+    
+    this.resumeParserService.startResumeParsing();
+  }
 }
