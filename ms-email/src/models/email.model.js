@@ -35,7 +35,8 @@ class EmailModel extends BaseModel {
     if (emails.length) {
       for (let candidate of emails[0].candidates) {
         try {
-          await emailHelper.sendEmails(candidate.emailAddress);
+          console.log(candidate);
+          await emailHelper.sendEmails(candidate,query.vacancyId);
 
           // Set flag 'isSent' to true. To indicate email has been sent to the candidate.
           await this.Model.updateOne({

@@ -14,7 +14,6 @@ import { AddInterviewerComponent } from 'app/pages/modals/add-interviewer/add-in
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
-    { path: 'user',           component: UserComponent },
     { path: 'table',          component: TableComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'vacancy',        component: VacancyComponent},

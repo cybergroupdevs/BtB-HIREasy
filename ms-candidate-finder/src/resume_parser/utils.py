@@ -141,12 +141,9 @@ class Utility:
                              not w in stop_words and lem.lemmatize(w) not in stop_words]
         sent = nltk.pos_tag(filtered_sentence)
 
-        # parse regex
+        # parse regex (It will parse Proper nouns followed by Cardinal Digit)
         cp = nltk.RegexpParser('P: {<NNP>+<CD>}')
         cs = cp.parse(sent)
-
-        # for i in cs.subtrees(filter=lambda x: x.label() == 'P'):
-        #     print(i)
 
         test = []
 
@@ -154,7 +151,8 @@ class Utility:
             test.append(" ".join([i[0] for i in vp.leaves() if len(vp.leaves()) >= 2]))
 
         # Search the word 'experience' in the chunk and then print out the text after it
-        self.__exp = [x[x.lower().index('experience') + 10:] for i, x in enumerate(test) if x and 'experience' in x.lower()]
+        exp_text = str([x[x.lower().index('experience') + 10:] for i, x in enumerate(test) if x and 'experience' in x.lower()])
+        self.__exp = [int(i) for i in exp_text if i.isdigit()]
 
     def parse_file(self, file_path):
         # Get file extension

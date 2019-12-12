@@ -3,25 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="aee135e7-8579-431f-91b0-b560f0a2bf6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/auth/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/router/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/router/file.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/router/routes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/server/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/mongo_adapter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ftp/Malik_Rabb.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ftp/Malik_Rabb.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handlers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handlers/file_handler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logging/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ftp/Malik_Rabb.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ftp/Mark_Robert.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resume_parser/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resume_parser/parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resume_parser/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resume_parser/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/config.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ms-hr/env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-hr/env.sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ms-hr/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-hr/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ms-hr/routes/admin-routes/v1/vacancy.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-hr/routes/admin-routes/v1/vacancy.route.js" afterDir="false" />
@@ -38,15 +23,16 @@
     <session id="-510688323">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -55,7 +41,7 @@
           <entry key="env" value="4" />
           <entry key="json" value="4" />
           <entry key="md" value="1" />
-          <entry key="py" value="46" />
+          <entry key="py" value="47" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
@@ -65,7 +51,7 @@
           <entry key="JSON" value="4" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="46" />
+          <entry key="Python" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -73,7 +59,7 @@
           <entry key="env" value="9" />
           <entry key="json" value="8" />
           <entry key="md" value="96" />
-          <entry key="py" value="4669" />
+          <entry key="py" value="5192" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -81,27 +67,18 @@
           <entry key="JSON" value="8" />
           <entry key="Markdown" value="96" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="4669" />
+          <entry key="Python" value="5192" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="121" lean-forward="true" selection-start-column="13" selection-end-column="121" />
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -109,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="198">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -122,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/api/mongo_adapter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -133,21 +110,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resume_parser/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="201" column="40" lean-forward="true" selection-start-line="201" selection-start-column="40" selection-end-line="201" selection-end-column="40" />
+            <state relative-caret-position="460">
+              <caret line="189" column="27" lean-forward="true" selection-start-line="189" selection-start-column="27" selection-end-line="189" selection-end-column="27" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1575975951922" expanded="true" signature="1886:2080" ph="..." />
+                <marker date="1576136921873" expanded="true" signature="1886:2080" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resume_parser/constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resume_parser/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="-88">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#30#39#0" expanded="true" />
               </folding>
@@ -181,12 +167,12 @@
         <option value="$PROJECT_DIR$/src/db/jdschema.py" />
         <option value="$PROJECT_DIR$/src/db/mongo_adapter.py" />
         <option value="$PROJECT_DIR$/src/api/router/routes.py" />
-        <option value="$PROJECT_DIR$/src/resume_parser/utils.py" />
         <option value="$PROJECT_DIR$/src/api/routes.py" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/src/resume_parser/parser.py" />
         <option value="$PROJECT_DIR$/src/config.py" />
         <option value="$PROJECT_DIR$/src/api/mongo_adapter.py" />
+        <option value="$PROJECT_DIR$/src/resume_parser/parser.py" />
+        <option value="$PROJECT_DIR$/src/resume_parser/utils.py" />
       </list>
     </option>
   </component>
@@ -202,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,6 +216,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -327,7 +313,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1227608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -360,9 +345,7 @@
     <entry file="file://$PROJECT_DIR$/src/util/constants.py" />
     <entry file="file://$PROJECT_DIR$/src/util/parser.py" />
     <entry file="file://$PROJECT_DIR$/src/api/router/v1/routes.py" />
-    <entry file="file://$PROJECT_DIR$/src/util/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/__init__.py" />
     <entry file="file://$PROJECT_DIR$/src/resume_parser/requirements.txt" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -375,28 +358,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resume_parser/skills.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/router/v1/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/src/api/router/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/router/__init__.py" />
     <entry file="file://$PROJECT_DIR$/src/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src_2/api/server/__init__.py" />
     <entry file="file://$PROJECT_DIR$/src_2/api/router/routes.py" />
     <entry file="file://$PROJECT_DIR$/src_2/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/src/api/router/file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/router/file.py" />
     <entry file="file://$PROJECT_DIR$/src/resume_parser/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -404,85 +379,21 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db/jdschema.py" />
-    <entry file="file://$PROJECT_DIR$/sample.env">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/mongo_adapter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/router/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="27" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resume_parser/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8567">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sample.env" />
+    <entry file="file://$PROJECT_DIR$/src/db/mongo_adapter.py" />
+    <entry file="file://$PROJECT_DIR$/src/api/router/routes.py" />
+    <entry file="file://$PROJECT_DIR$/src/api/file.py" />
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="121" lean-forward="true" selection-start-column="13" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resume_parser/parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#30#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resume_parser/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="201" column="40" lean-forward="true" selection-start-line="201" selection-start-column="40" selection-end-line="201" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1575975951922" expanded="true" signature="1886:2080" ph="..." />
-          </folding>
+          <caret column="121" selection-start-column="13" selection-end-column="121" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/mongo_adapter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
@@ -492,7 +403,45 @@
     <entry file="file://$PROJECT_DIR$/src/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resume_parser/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="189" column="27" lean-forward="true" selection-start-line="189" selection-start-column="27" selection-end-line="189" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1576136921873" expanded="true" signature="1886:2080" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resume_parser/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resume_parser/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#30#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

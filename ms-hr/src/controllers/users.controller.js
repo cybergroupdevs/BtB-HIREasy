@@ -11,6 +11,15 @@ class UserController extends BaseController {
     super();
   }
 
+  async login(req,res){
+    const token = authHelper.generateToken({
+      payload: { email: req.body.email },
+      secret: AUTH_SECRET_KEY,
+      expiresIn: EXPIRES_IN
+    });
+    super.sendResponse({req,res,response:{statusCode: 200, success:true,data:{token:token}}});
+  }
+
   async getUsers(req, res) {
     try {
       let response = undefined;

@@ -2,6 +2,7 @@
 
 import os
 import spacy
+import threading
 from spacy.matcher import Matcher
 
 import src.resume_parser.utils as util
@@ -18,14 +19,31 @@ def resume_parser_wrapper(file_path):
     matcher = Matcher(nlp.vocab)
 
     # parse data
-    parser_class.parse_name(rs_content, matcher, nlp)
-    parser_class.parse_phone(rs_content)
-    parser_class.parse_email(rs_content)
-    parser_class.parse_skills(rs_content_nlp)
-    parser_class.parse_education([sent.string.strip() for sent in rs_content_nlp])
-    parser_class.parse_experience(rs_content)
+    t1 = threading.Thread(target=parser_class.parse_name, args=(rs_content, matcher, nlp,))
+    t2 = threading.Thread(target=parser_class.parse_phone, args=(rs_content,))
+    t3 = threading.Thread(target=parser_class.parse_email, args=(rs_content,))
+    t4 = threading.Thread(target=parser_class.parse_skills, args=(rs_content_nlp,))
+    t5 = threading.Thread(target=parser_class.parse_education, args=([sent.string.strip() for sent in rs_content_nlp],))
+    t6 = threading.Thread(target=parser_class.parse_experience, args=(rs_content,))
+
+    # Extremely ghetto way of threading for testing purposes
+    # TODO: Create a wrapper and use ThreadPoolExecutor to call and join threads
+    # At least its faster than before
+    t1.start()
+    t2.start()
+    t3.start()
+    t4.start()
+    t5.start()
+    t6.start()
+    t1.join()
+    t2.join()
+    t3.join()
+    t4.join()
+    t5.join()
+    t6.join()
     parser_class.move_to_archive(file_path)
     return parser_class.insert_to_db()
+    # return parser_class.convert_to_json()
 
 
 def resume_main():
