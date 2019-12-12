@@ -1,19 +1,17 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { CommonService } from "./commonService";
 
 @Injectable({
-    providedIn:"root"
+  providedIn: "root"
 })
-
 export class InterviewerService {
-    constructor(private http: HttpClient){}
-    apiUrl="http://localhost:9000/";
-    addInterviewer(obj){
-        return this.http.post(this.apiUrl+"admin/v1/interviewers",obj);
-    };
+  constructor(private http: HttpClient, private commonService: CommonService) {}
+  addInterviewer(obj) {
+    return this.commonService.create("admin/v1/interviewers", obj);
+  }
 
-    getInterviewers(){
-        return this.http.get(this.apiUrl+"admin/v1/interviewers");
-    }
-
+  getInterviewers() {
+    return this.commonService.getData("admin/v1/interviewers");
+  }
 }
