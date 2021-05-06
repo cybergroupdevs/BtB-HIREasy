@@ -8,7 +8,7 @@ cymem==2.0.3
 dnspython==1.16.0
 docx2txt==0.8
 Flask==1.1.1
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 genson==1.1.0
 idna==2.8
 importlib-metadata==0.23
